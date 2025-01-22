@@ -135,6 +135,71 @@ class Cat implements Animal {
 }
 ```
 ---
+## **5. Lambda Expressions**
+A **lambda expression** is a concise way to represent a method using an anonymous function. It is primarily used with functional interfaces (interfaces with a single abstract method).
+
+### **Key Features of Lambda Expressions**
+- Simplifies code for functional interfaces.
+- Improves readability and reduces boilerplate code.
+
+### **Example**
+```java
+@FunctionalInterface
+interface Calculator {
+    int calculate(int a, int b);
+}
+
+public class LambdaExample {
+    public static void main(String[] args) {
+        Calculator add = (a, b) -> a + b;
+        Calculator multiply = (a, b) -> a * b;
+
+        System.out.println("Sum: " + add.calculate(5, 10)); // Output: Sum: 15
+        System.out.println("Product: " + multiply.calculate(5, 10)); // Output: Product: 50
+    }
+}
+```
+
+## **6. Inner Classes**
+An **inner class** is a class defined within another class. It is used to logically group classes and access private members of the outer class.
+
+### **Types of Inner Classes**
+1. **Non-static Inner Class**: Associated with an instance of the outer class.
+2. **Static Inner Class**: Can be accessed without an outer class instance.
+3. **Anonymous Class**: A class without a name, used for one-time implementations.
+
+### **Example**
+```java
+public class OuterClass {
+    private String message = "Hello, Inner Class!";
+
+    // Non-static Inner Class
+    class Inner {
+        void displayMessage() {
+            System.out.println(message);
+        }
+    }
+
+    // Static Inner Class
+    static class StaticInner {
+        void greet() {
+            System.out.println("Hello from Static Inner Class!");
+        }
+    }
+
+    public static void main(String[] args) {
+        // Using Non-static Inner Class
+        OuterClass outer = new OuterClass();
+        Inner inner = outer.new Inner();
+        inner.displayMessage();
+
+        // Using Static Inner Class
+        StaticInner staticInner = new StaticInner();
+        staticInner.greet();
+    }
+}
+```
+
 
 ## **Java Keywords Explained**
 Java has 50+ reserved keywords that are predefined in the language. Here are some commonly used ones:

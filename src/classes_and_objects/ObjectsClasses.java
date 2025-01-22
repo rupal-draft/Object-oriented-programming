@@ -2,30 +2,44 @@ package classes_and_objects;
 
 public class ObjectsClasses {
     public static void main(String [] args){
-        Dog dog1 = new Dog();//Creating a dog object
+        // Creating two Dog objects (instances of the Dog class)
+        Dog dog1 = new Dog();
         Dog dog2 = new Dog();
-        //the dog1 object and dog2 objects is an instance of the dog class which has all the properties and behaviours of dog class attached to it
+
+        // Setting properties of the dog1 object
         dog1.name = "Tommy";
+        dog1.age = 3; // Setting the age property
+        dog1.color = "Brown"; // Setting the color property
+
+        // Setting properties of the dog2 object
         dog2.name = "Jimmy";
+        dog2.age = 4; // Setting the age property
+        dog2.color = "Black"; // Setting the color property
+
+        // Calling the bark() method on dog1
         dog1.bark();
+
         System.out.println();
+
+        // Calling the walk() method on dog2
         dog2.walk();
     }
 }
 
-//Blueprint which defines some properties and behaviours
-class Dog{
+// Class Dog defines the blueprint for creating Dog objects
+class Dog {
+    // Properties (attributes) of the Dog class
+    String name;  // Name of the dog
+    int age;      // Age of the dog
+    String color; // Color of the dog
 
-    //Properties
-    String name;
-    int age;
-    String color;
-
-    //Behaviours
-    void walk(){
-        System.out.println(name+" is walking!");
+    // Method to simulate the dog walking
+    void walk() {
+        System.out.println(name + " is walking!");
     }
-    void bark(){
-        System.out.println(name+" is barking!!");
+
+    // Method to simulate the dog barking
+    void bark() {
+        System.out.println(name + " is barking!!");
     }
 }
